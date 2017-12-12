@@ -1,6 +1,6 @@
 # gommand
 
-A simple way to define multiple application in the same command.
+A simple way to define multiple applications in the same command.
 
 ## Usage
 
