@@ -12,11 +12,11 @@ type Application interface {
 }
 
 // StartApplications defined in the array.
-func StartApplications(applications []Application) {
+func StartApplications(logger golog.Logger, applications []Application) {
 	for _, a := range applications {
 		go func(a Application) {
-			if error := a.Start(); error != nil {
-				golog.Create().Add("application", a).Add("error", error).Fatal("Could start application")
+			if err := a.Start(); err != nil {
+				logger.Fatal("Could start application", golog.Attributes{"error": err})
 			}
 		}(a)
 	}
