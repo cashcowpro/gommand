@@ -1,4 +1,6 @@
-package gommand_test
+// +build spec
+
+package gommand
 
 import (
 	. "github.com/onsi/ginkgo"
