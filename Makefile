@@ -1,6 +1,3 @@
-# Provide env variables
--include .local.sh
-
 dependencies:
 	go get github.com/golang/dep/cmd/dep
 	go get github.com/DATA-DOG/godog/cmd/godog
@@ -9,7 +6,7 @@ dependencies:
 	dep ensure -v
 
 spec:
-	ginkgo -v -trace ./...
+	go test -v -tags=spec -cover ./...
 
 feature:
-	godog --format=pretty --strict
+	go test -v -tags=feature -cover ./...

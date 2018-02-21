@@ -16,7 +16,7 @@ func StartApplications(logger golog.Logger, applications []Application) {
 	for _, a := range applications {
 		go func(a Application) {
 			if err := a.Start(); err != nil {
-				logger.Fatal("Could start application", golog.Attributes{"error": err})
+				logger.FatalError("Could start application", err)
 			}
 		}(a)
 	}
