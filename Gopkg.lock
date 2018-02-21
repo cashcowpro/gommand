@@ -2,10 +2,20 @@
 
 
 [[projects]]
+  name = "github.com/DATA-DOG/godog"
+  packages = [
+    ".",
+    "colors",
+    "gherkin"
+  ]
+  revision = "4dc98b0e2b130c3c9d06868a050320e5b310d3e7"
+  version = "v0.7.4"
+
+[[projects]]
   branch = "master"
   name = "github.com/cashcowpro/golog"
   packages = ["."]
-  revision = "2e87e8259979fe6e6cbd9fe2bd9166ec3af7ad31"
+  revision = "84c24fec93a3821289e71766bdd3c30f33ae5156"
 
 [[projects]]
   name = "github.com/onsi/ginkgo"
@@ -48,8 +58,8 @@
     "matchers/support/goraph/util",
     "types"
   ]
-  revision = "c893efa28eb45626cdaa76c9f653b62488858837"
-  version = "v1.2.0"
+  revision = "003f63b7f4cff3fc95357005358af2de0f5fe152"
+  version = "v1.3.0"
 
 [[projects]]
   branch = "master"
@@ -59,13 +69,13 @@
     "html/atom",
     "html/charset"
   ]
-  revision = "d866cfc389cec985d6fda2859936a575a55a3ab6"
+  revision = "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "1d2aa6dbdea45adaaebb9905d0666e4537563829"
+  revision = "37707fdb30a5b38865cfb95e5aab41707daec7fd"
 
 [[projects]]
   branch = "master"
@@ -89,17 +99,17 @@
     "transform",
     "unicode/cldr"
   ]
-  revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
+  revision = "9e2b64d659da1afe07ce1c9c1dfefc09d188f21e"
 
 [[projects]]
   branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "287cf08546ab5e7e37d55a84f7ed3fd1db036de5"
+  revision = "d670f9405373e636a5a2765eea47fac0c9bc91a4"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "3347274b12d145a5ad465db4e3452c6255927ab3d4fcb51b661b2936775f4bcc"
+  inputs-digest = "84b8e9bc64f5fe5b1ca497d509d63ffaafd0b81ab0e769085a820b44796ac451"
   solver-name = "gps-cdcl"
   solver-version = 1
