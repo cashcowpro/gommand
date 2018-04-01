@@ -2,10 +2,19 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/golang:1.9
+      - image: golang:1.10
     working_directory: /go/src/github.com/cashcowpro/gommand
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - vendor-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gopkg.lock" }}
+      - run: go version
       - run: make dependencies
+      - save_cache:
+          key: vendor-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gopkg.lock" }}
+          paths:
+            - vendor
       - run: make spec
       - run: make feature
+      - run: make analysis
