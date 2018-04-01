@@ -8,8 +8,8 @@
     "colors",
     "gherkin"
   ]
-  revision = "4dc98b0e2b130c3c9d06868a050320e5b310d3e7"
-  version = "v0.7.4"
+  revision = "0371765570d36374bef4ab9f62ed0491f0862a3c"
+  version = "v0.7.6"
 
 [[projects]]
   branch = "master"
@@ -110,6 +110,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "84b8e9bc64f5fe5b1ca497d509d63ffaafd0b81ab0e769085a820b44796ac451"
+  inputs-digest = "60b9750625db1497821a81b135d98f936142968984fcdcdf0687284004ef9181"
   solver-name = "gps-cdcl"
   solver-version = 1
