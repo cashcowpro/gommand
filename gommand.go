@@ -1,7 +1,7 @@
 package gommand
 
 import (
-	"time"
+	"sync"
 
 	"github.com/cashcowpro/golog"
 )
@@ -13,15 +13,19 @@ type Application interface {
 
 // StartApplications defined in the array.
 func StartApplications(logger golog.Logger, applications []Application) {
+	wg := &sync.WaitGroup{}
+
 	for _, a := range applications {
-		go func(a Application) {
+		wg.Add(1)
+
+		go func(a Application, wg *sync.WaitGroup) {
+			defer wg.Done()
+
 			if err := a.Start(); err != nil {
-				logger.FatalError("Could start application", err)
+				logger.Error("Could start application", err)
 			}
-		}(a)
+		}(a, wg)
 	}
 
-	for {
-		time.Sleep(100 * time.Millisecond)
-	}
+	wg.Wait()
 }
